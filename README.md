@@ -1,7 +1,7 @@
 # Wallpaper Market
 > "You're not cool unless your wallpapers are..." - Joe Biden
 
-![plot](https://apkrig.com/wp-content/uploads/2021/02/1613755515_the-10-best-iPhone-wallpapers-of-the-week-930x620.jpg?raw=true "Preview")
+![/](./README-image.png)
 
 ## Project Proposal
 Wallpaper Market is a full-stack MERN web application that allows users to search for and download high-resolution background wallpapers for their mobile devices. Users will be able to create an account, add/remove wallpapers from a "favorites" list, and enjoy aesthetically pleasing background art on their personal devices. Users will also have the option of donating any dollar amount to support the poor developers who created this app.
