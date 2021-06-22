@@ -1,10 +1,10 @@
 # Wallpaper Market
-You're not cool unless your wallpapers are
+"You're not cool unless your wallpapers are..." - Joe Biden
 
 ![plot](https://apkrig.com/wp-content/uploads/2021/02/1613755515_the-10-best-iPhone-wallpapers-of-the-week-930x620.jpg?raw=true "Preview")
 
 ## Project Proposal
-Phasellizzle interdum my shizz tellus. Ut semper adipiscing lorizzle. Fizzle non est. Nulla dizzle massa, ultrices sizzle, accumsizzle vel, fermentizzle sizzle, that's the shizzle. Yo mamma nec libero. Etizzle rutrizzle pizzle ante. Maurizzle break yo neck, yall. Vestibulum shiznit mammasay mammasa mamma oo sa varius nibh izzle commodo. Lorem ipsum dolor fo brizzle, consectetizzle shizzle my nizzle crocodizzle elit. Dope izzle . Quisque i'm in the shizzle ass, sodalizzle izzle, gangster a, fo shizzle mah nizzle fo rizzle, mah home g-dizzle a, elizzle.
+Wallpaper Market is a full-stack MERN web application that allows users to search for and download high-resolution wallpapers for their mobile devices. Users will be able to create an account, add/remove wallpapers to a personal "Wallpaper Library", and enjoy aesthetically pleasing background art on their personal devices. Users will also have the option of donating any dollar amount to support the poor developers who created this app.
 
 ## Project Requirements
 - Use React for the front end.
