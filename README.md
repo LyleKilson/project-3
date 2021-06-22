@@ -1,5 +1,5 @@
 # Wallpaper Market
-"You're not cool unless your wallpapers are..." - Joe Biden
+> "You're not cool unless your wallpapers are..." - Joe Biden
 
 ![plot](https://apkrig.com/wp-content/uploads/2021/02/1613755515_the-10-best-iPhone-wallpapers-of-the-week-930x620.jpg?raw=true "Preview")
 
