@@ -1,5 +1,7 @@
+const faker = require("faker");
+
 const db = require("./connection");
-const { Product, Category } = require("../models");
+const { User, Product, Category } = require("../models");
 
 db.once("open", async () => {
   await Category.deleteMany();
@@ -93,19 +95,36 @@ db.once("open", async () => {
 
   await User.deleteMany();
 
-  await User.create({
-    firstName: "Test",
-    lastName: "User",
-    email: "testuser@testmail.com",
-    password: "password12345",
-    orders: [
-      {
-        products: [products[0]._id, products[3]._id, products[6]._id],
-      },
-    ],
-  });
+  // create a test user
+
+  // await User.create({
+  //   firstName: "Test",
+  //   lastName: "User",
+  //   email: "testuser@testmail.com",
+  //   password: "password12345",
+  //   orders: [
+  //     {
+  //       products: [products[0]._id, products[3]._id, products[6]._id],
+  //     },
+  //   ],
+  // });
+
+  // create many fake users
+  const userData = [];
+
+  for (let i = 0; i < 50; i += 1) {
+    const username = faker.internet.userName();
+    const email = faker.internet.email(username);
+    const password = faker.internet.password();
+
+    userData.push({ username, email, password });
+  }
+
+  await User.collection.insertMany(userData);
 
   console.log("users seeded");
 
-  process.exit();
+  console.log("seed finished, exiting");
+
+  process.exit(0);
 });
