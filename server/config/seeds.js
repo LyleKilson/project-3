@@ -99,9 +99,9 @@ db.once("open", async () => {
   const userData = [];
 
   for (let i = 0; i < 50; i += 1) {
-    const firstName = faker.internet.firstName();
-    const lastName = faker.internet.lastName();
-    const email = faker.internet.email(username);
+    const firstName = faker.name.firstName();
+    const lastName = faker.name.lastName();
+    const email = faker.internet.email();
     const password = faker.internet.password();
 
     userData.push({ firstName, lastName, email, password });
