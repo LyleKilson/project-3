@@ -25,11 +25,9 @@ function Detail() {
     const { products, cart } = state;
 
     useEffect(() => {
-        // already in global store
         if (products.length) {
             setCurrentProduct(products.find(product => product._id === id));
         }
-        // retrieved from server
         else if (data) {
             dispatch({
                 type: UPDATE_PRODUCTS,
@@ -40,7 +38,6 @@ function Detail() {
                 idbPromise('products', 'put', product);
             });
         }
-        // get cache from idb
         else if (!loading) {
             idbPromise('products', 'get').then((indexedProducts) => {
                 dispatch({
@@ -88,7 +85,7 @@ function Detail() {
                 <div className="container my-1">
                     <Link to="/">
                         ← Back to Products
-          </Link>
+                    </Link>
 
                     <h2>{currentProduct.name}</h2>
 
@@ -102,13 +99,13 @@ function Detail() {
                         {" "}
                         <button onClick={addToCart}>
                             Add to Cart
-            </button>
+                        </button>
                         <button
                             disabled={!cart.find(p => p._id === currentProduct._id)}
                             onClick={removeFromCart}
                         >
                             Remove from Cart
-            </button>
+                        </button>
                     </p>
 
                     <img
