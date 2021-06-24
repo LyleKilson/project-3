@@ -33,6 +33,4 @@ Wallpaper Market is a full-stack MERN web application that allows users to searc
 
 
 ## Contributions 🤓
-Danny Lewis,
-Caroline Phillips,
-and Kyle Wilson
+Danny Lewis, Caroline Phillips, Kyle Wilson, and Jaden Robison
