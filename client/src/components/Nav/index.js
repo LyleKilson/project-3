@@ -11,7 +11,7 @@ function Nav() {
                     <li className="mx-1">
                         <Link to="/orderHistory">
                             Order History
-            </Link>
+                        </Link>
                     </li>
                     <li className="mx-1">
                         {}
@@ -25,12 +25,12 @@ function Nav() {
             return (
                 <ul className="flex-row">
                     <li className="mx-1">
-                        <Link to="/signup">
+                        <Link style={{textDecoration:"none"}} to="/signup">
                             Signup
                         </Link>
                     </li>
                     <li className="mx-1">
-                        <Link to="/login">
+                        <Link style={{textDecoration: "none"}} to="/login">
                             Login
                         </Link>
                     </li>
@@ -42,9 +42,8 @@ function Nav() {
     return (
         <header className="flex-row px-1">
             <h1>
-                <Link to="/">
-                    <span role="img" aria-label="phone">📱</span>
-                    The Coolest Wallpapers!!
+                <Link style={{textDecoration: "none"}} to="/">
+                    WALLPAPER MARKET
                 </Link>
             </h1>
 
