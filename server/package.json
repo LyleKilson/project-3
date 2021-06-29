@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node server.js",
     "watch": "nodemon",
-    "seed": "node seeders/seeds.js"
+    "seed": "node config/seeds.js"
   },
   "repository": {
     "type": "git",
@@ -19,8 +19,10 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@stripe/stripe-js": "^1.15.1",
     "apollo-server-express": "^2.25.1",
     "bcrypt": "^4.0.1",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "graphql": "^15.5.1",
