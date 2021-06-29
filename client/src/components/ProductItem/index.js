@@ -26,13 +26,6 @@ function ProductItem(item) {
                 downloadQuantity: parseInt(fileDownloading.downloadQuantity) + 1
             });
         } 
-        // else {
-        //     dispatch({
-        //         type: ADD_TO_DOWNLOADS,
-        //         product: { ...item, downloadQuantity: 1 }
-        //     });
-        //     idbPromise('download', 'put', { ...item, downloadQuantity: 1 });
-        // }
     }
 
     return (
@@ -44,7 +37,7 @@ function ProductItem(item) {
                 />
                 <p>{name}</p>
             </Link>
-            <button onClick={addDownload}>Download</button>
+
         </div>
     );
 }

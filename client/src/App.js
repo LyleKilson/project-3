@@ -12,6 +12,8 @@ import { StoreProvider } from "./utils/GlobalState";
 
 
 
+
+
 const client = new ApolloClient({
   request: (operation) => {
     const token = localStorage.getItem('id_token')

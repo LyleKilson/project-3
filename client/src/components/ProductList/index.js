@@ -5,7 +5,8 @@ import { UPDATE_PRODUCTS } from "../../utils/actions";
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_PRODUCTS } from "../../utils/queries";
 import { idbPromise } from "../../utils/helpers";
-import spinner from "../../assets/spinner.gif"
+
+
 
 function ProductList() {
     const [state, dispatch] = useStoreContext();
@@ -13,6 +14,7 @@ function ProductList() {
     const { currentCategory } = state;
 
     const { loading, data } = useQuery(QUERY_PRODUCTS);
+
 
     useEffect(() => {
         if(data) {
@@ -52,16 +54,25 @@ function ProductList() {
                                 _id={product._id}
                                 image={product.image}
                                 name={product.name}
-                                price={product.price}
-                                quantity={product.quantity}
                             />
                         ))}
                     </div>
                 ) : (
-                    <h3>You haven't added any products yet!</h3>
+                    <h3>Find us on Social!</h3>
                 )}
-                { loading ? 
-                <img src={spinner} alt="loading" />: null}
+                
+                <ul className="Social" style={{listStyle: "none"}}>
+                        <li>
+                            <a href="https://www.instagram.com/"><i className="fa fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/"><i className="fa fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.twitter.com/"><i className="fa fa-twitter"></i></a>
+                        </li>
+                    
+                </ul>
             </div>
         );
 }

@@ -18,7 +18,7 @@ function Nav() {
             );
         } else {
             return (
-                <ul className="flex-row">
+                <ul className="flex-row" style={{listStyle: "none"}}>
                     <li className="mx-1">
                         <Link style={{textDecoration:"none"}} to="/signup">
                             Signup
@@ -45,6 +45,12 @@ function Nav() {
             <nav>
                 {showNavigation()}
             </nav>
+
+            <div className="row-banner">
+                <div className="banner-text">
+                    <h2>The best site to style your device</h2>
+                </div>
+            </div>
         </header>
     );
 }
