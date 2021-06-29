@@ -57,7 +57,7 @@ function Login(props) {
                 </div>
                 {
                     error ? <div>
-                        <p className="error-text" >The provided credentials are incorrect</p>
+                        <p className="error-text" >No account found with these login credentials!</p>
                     </div> : null
                 }
                 <div className="flex-row flex-end">
