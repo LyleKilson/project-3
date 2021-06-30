@@ -14,15 +14,16 @@ function ProductList() {
     const { currentCategory } = state;
 
     const { loading, data } = useQuery(QUERY_PRODUCTS);
-
+console.log(data, loading, "hello")
 
     useEffect(() => {
-        if(data) {
+        if(data !== undefined) {
             dispatch({
             type: UPDATE_PRODUCTS,
             products: data.products
         });
-        data.products.forEach((product) => {
+        data.products.forEach((product) => { 
+            console.log(product, "string")
             idbPromise('products', 'put', product);
         });
     } else if (!loading) {
@@ -33,7 +34,7 @@ function ProductList() {
             });
         });
     }
-    }, [data, loading, dispatch]);
+    }, [data]);
 
     function filterProducts() {
         if (!currentCategory) {
@@ -42,7 +43,7 @@ function ProductList() {
 
     return state.products.filter(product => product.category._id === currentCategory);
     }
-
+console.log(currentCategory);
     return (
         <div className="my-2">
             <h2>Our Wallpapers:</h2>
@@ -58,7 +59,7 @@ function ProductList() {
                         ))}
                     </div>
                 ) : (
-                    <h3>Find us on Social!</h3>
+                    <h3>Be Social With Us!</h3>
                 )}
                 
                 <ul className="Social" style={{listStyle: "none"}}>
