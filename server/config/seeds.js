@@ -16,11 +16,11 @@ db.once("open", async () => {
 
   await Product.deleteMany();
 
-  const products = await Product.insertMany([
+  await Product.insertMany([
     {
       name: "abstract-1",
       description: "abstract abstract abstract abstract abstract",
-      image: "abstract-1.jpg",
+      image: "blue-water.jpeg",
       category: categories[0]._id,
       price: 0.99,
       quantity: 1,
@@ -28,7 +28,7 @@ db.once("open", async () => {
     {
       name: "abstract-2",
       description: "abstract abstract abstract abstract abstract",
-      image: "abstract-2.jpg",
+      image: "bridge.jpeg",
       category: categories[0]._id,
       price: 0.99,
       quantity: 1,
@@ -36,7 +36,7 @@ db.once("open", async () => {
     {
       name: "abstract-3",
       description: "abstract abstract abstract abstract abstract",
-      image: "abstract-3.jpg",
+      image: "Corona.jpg",
       category: categories[0]._id,
       price: 0.99,
       quantity: 1,
@@ -44,7 +44,7 @@ db.once("open", async () => {
     {
       name: "city-1",
       description: "city city city city city ",
-      image: "city-1.jpg",
+      image: "city-night.jpg",
       category: categories[1]._id,
       price: 0.99,
       quantity: 1,
@@ -52,7 +52,7 @@ db.once("open", async () => {
     {
       name: "city-2",
       description: "city city city city city ",
-      image: "city-2.jpg",
+      image: "paris.jpeg",
       category: categories[1]._id,
       price: 0.99,
       quantity: 1,
@@ -60,7 +60,7 @@ db.once("open", async () => {
     {
       name: "city-3",
       description: "city city city city city ",
-      image: "city-3.jpg",
+      image: "vegas.jpeg",
       category: categories[1]._id,
       price: 0.99,
       quantity: 1,
@@ -68,7 +68,7 @@ db.once("open", async () => {
     {
       name: "landscape-1",
       description: "landscape landscape landscape landscape landscape ",
-      image: "landscape-1.jpg",
+      image: "MountainRange.jpg",
       category: categories[2]._id,
       price: 0.99,
       quantity: 1,
@@ -76,7 +76,7 @@ db.once("open", async () => {
     {
       name: "landscape-2",
       description: "landscape landscape landscape landscape landscape ",
-      image: "landscape-2.jpg",
+      image: "waterfall.jpeg",
       category: categories[2]._id,
       price: 0.99,
       quantity: 1,
@@ -84,7 +84,7 @@ db.once("open", async () => {
     {
       name: "landscape-3",
       description: "landscape landscape landscape landscape landscape ",
-      image: "landscape-3.jpg",
+      image: "tropical.jpeg",
       category: categories[2]._id,
       price: 0.99,
       quantity: 1,
