@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useStoreContext } from "../../utils/GlobalState";
 import { idbPromise } from "../../utils/helpers";
 
-function ProductItem(item) {
+function ProductItem( item ) {
     const [state, dispatch] = useStoreContext();
 
     const {
@@ -37,7 +37,7 @@ function ProductItem(item) {
                 />
                 <p>{name}</p>
             </Link>
-
+            <button onClick={addDownload}>Add Download</button>
         </div>
     );
 }

@@ -17,33 +17,34 @@ function ProductList() {
 console.log(data, loading, "hello")
 
     useEffect(() => {
-        if(data !== undefined) {
-            dispatch({
-            type: UPDATE_PRODUCTS,
-            products: data.products
-        });
-        data.products.forEach((product) => { 
-            console.log(product, "string")
-            idbPromise('products', 'put', product);
-        });
-    } else if (!loading) {
-        idbPromise('products', 'get').then((products) => {
+        if(data) {
             dispatch({
                 type: UPDATE_PRODUCTS,
-                products: products
+                products: data.products
             });
-        });
-    }
-    }, [data]);
+            data.products.forEach((product) => { 
+                console.log(product, "string")
+                idbPromise('products', 'put', product);
+            });
+        } else if (!loading) {
+            idbPromise('products', 'get').then((products) => {
+                dispatch({
+                    type: UPDATE_PRODUCTS,
+                    products: products
+                });
+            });
+        }
+    }, [data, loading, dispatch]);
 
     function filterProducts() {
         if (!currentCategory) {
-        return state.products;
-    }
+            return state.products;
+        }
 
-    return state.products.filter(product => product.category._id === currentCategory);
+        return state.products.filter(product => product.category._id === currentCategory);
     }
 console.log(currentCategory);
+    
     return (
         <div className="my-2">
             <h2>Our Wallpapers:</h2>
