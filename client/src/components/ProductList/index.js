@@ -11,74 +11,70 @@ function ProductList() {
 
   const { currentCategory } = state;
 
-  const { loading, data } = useQuery(QUERY_PRODUCTS);
+    const { loading, data } = useQuery(QUERY_PRODUCTS);
+console.log(data, loading, "hello")
 
-  useEffect(() => {
-    if (data) {
-      dispatch({
-        type: UPDATE_PRODUCTS,
-        products: data.products,
-      });
-      data.products.forEach((product) => {
-        idbPromise("products", "put", product);
-      });
-    } else if (!loading) {
-      idbPromise("products", "get").then((products) => {
-        dispatch({
-          type: UPDATE_PRODUCTS,
-          products: products,
-        });
-      });
+    useEffect(() => {
+        if(data) {
+            dispatch({
+                type: UPDATE_PRODUCTS,
+                products: data.products
+            });
+            data.products.forEach((product) => { 
+                console.log(product, "string")
+                idbPromise('products', 'put', product);
+            });
+        } else if (!loading) {
+            idbPromise('products', 'get').then((products) => {
+                dispatch({
+                    type: UPDATE_PRODUCTS,
+                    products: products
+                });
+            });
+        }
+    }, [data, loading, dispatch]);
+
+    function filterProducts() {
+        if (!currentCategory) {
+            return state.products;
+        }
+
+        return state.products.filter(product => product.category._id === currentCategory);
     }
-  }, [data, loading, dispatch]);
-
-  function filterProducts() {
-    if (!currentCategory) {
-      return state.products;
-    }
-
-    return state.products.filter(
-      (product) => product.category._id === currentCategory
-    );
-  }
-
-  return (
-    <div className="my-2">
-      <h2>Our Wallpapers:</h2>
-      {state.products.length ? (
-        <div className="flex-row">
-          {filterProducts().map((product) => (
-            <ProductItem
-              key={product._id}
-              _id={product._id}
-              image={product.image}
-              name={product.name}
-            />
-          ))}
-        </div>
-      ) : (
-        <h3>Find us on Social!</h3>
-      )}
-
-      <ul className="Social" style={{ listStyle: "none" }}>
-        <li>
-          <a href="https://www.instagram.com/">
-            <i className="fa fa-instagram"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/">
-            <i className="fa fa-facebook"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.twitter.com/">
-            <i className="fa fa-twitter"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-  );
+console.log(currentCategory);
+    
+    return (
+        <div className="my-2">
+            <h2>Our Wallpapers:</h2>
+                {state.products.length ? (
+                    <div className="flex-row">
+                        {filterProducts().map(product => (
+                            <ProductItem
+                                key= {product._id}
+                                _id={product._id}
+                                image={product.image}
+                                name={product.name}
+                            />
+                        ))}
+                    </div>
+                ) : (
+                    <h3>Be Social With Us!</h3>
+                )}
+                
+                <ul className="Social" style={{listStyle: "none"}}>
+                        <li>
+                            <a href="https://www.instagram.com/"><i className="fa fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/"><i className="fa fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.twitter.com/"><i className="fa fa-twitter"></i></a>
+                        </li>
+                    
+                </ul>
+            </div>
+        );
 }
 
 export default ProductList;
