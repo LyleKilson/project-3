@@ -2,16 +2,14 @@ import React, { useEffect } from "react";
 import ProductItem from "../ProductItem";
 import { useStoreContext } from "../../utils/GlobalState";
 import { UPDATE_PRODUCTS } from "../../utils/actions";
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from "@apollo/react-hooks";
 import { QUERY_PRODUCTS } from "../../utils/queries";
 import { idbPromise } from "../../utils/helpers";
 
-
-
 function ProductList() {
-    const [state, dispatch] = useStoreContext();
+  const [state, dispatch] = useStoreContext();
 
-    const { currentCategory } = state;
+  const { currentCategory } = state;
 
     const { loading, data } = useQuery(QUERY_PRODUCTS);
 console.log(data, loading, "hello")

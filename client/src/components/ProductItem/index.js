@@ -6,27 +6,25 @@ import { idbPromise } from "../../utils/helpers";
 function ProductItem( item ) {
     const [state, dispatch] = useStoreContext();
 
-    const {
-        image,
-        name,
-        _id,
-    } = item;
+  const { image, name, _id } = item;
 
-    const { download } = state
+  const { download } = state;
 
-    const addDownload = () => {
-        const fileDownloading = download.find((downloadItem) => downloadItem._id === _id)
-        if (fileDownloading) {
-            dispatch({
-                _id: _id,
-                downloadQuantity: parseInt(fileDownloading.downloadQuantity) + 1
-            });
-            idbPromise('download', 'put', {
-                ...fileDownloading,
-                downloadQuantity: parseInt(fileDownloading.downloadQuantity) + 1
-            });
-        } 
+  const addDownload = () => {
+    const fileDownloading = download.find(
+      (downloadItem) => downloadItem._id === _id
+    );
+    if (fileDownloading) {
+      dispatch({
+        _id: _id,
+        downloadQuantity: parseInt(fileDownloading.downloadQuantity) + 1,
+      });
+      idbPromise("download", "put", {
+        ...fileDownloading,
+        downloadQuantity: parseInt(fileDownloading.downloadQuantity) + 1,
+      });
     }
+  };
 
     return (
         <div className="card px-1 py-1">
