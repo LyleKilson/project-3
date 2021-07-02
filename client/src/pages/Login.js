@@ -54,7 +54,7 @@ function Login(props) {
                         id="pwd"
                         onChange={handleChange}
                     />
-                </div>
+               </div>
                 {
                     error ? <div>
                         <p className="error-text" >Invalid login credentials!</p>
@@ -66,7 +66,6 @@ function Login(props) {
                     </button>
                 </div>
             </form>
-        </div>
         <div className="flex-row space-between my-2">
           <label htmlFor="pwd">Password:</label>
           <input
@@ -87,7 +86,6 @@ function Login(props) {
         <div className="flex-row flex-end">
           <button type="submit">Submit</button>
         </div>
-      </form>
     </div>
   );
 }
