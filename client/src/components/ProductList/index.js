@@ -44,10 +44,10 @@ console.log(data, loading, "hello")
 console.log(currentCategory);
     
     return (
-        <div className="my-2">
-            <h2>Our Wallpapers:</h2>
+        <div className="text-center m-10">
+            <h1 className="text-2xl mb-10">Our Wallpapers</h1>
                 {state.products.length ? (
-                    <div className="flex-row">
+                    <div className="grid grid-flow-row grid-cols-2 grid-rows-2 gap-10 ">
                         {filterProducts().map(product => (
                             <ProductItem
                                 key= {product._id}

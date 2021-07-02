@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { useStoreContext } from "../../utils/GlobalState";
 import { idbPromise } from "../../utils/helpers";
 
-function ProductItem( item ) {
-    const [state, dispatch] = useStoreContext();
+function ProductItem(item) {
+  const [state, dispatch] = useStoreContext();
 
   const { image, name, _id } = item;
 
@@ -26,18 +26,20 @@ function ProductItem( item ) {
     }
   };
 
-    return (
-        <div className="card px-1 py-1">
-            <Link to={`/products/${_id}`}>
-                <img
-                    alt={name}
-                    src={`/images/${image}`}
-                />
-                <p>{name}</p>
-            </Link>
-            <button onClick={addDownload}>Add Download</button>
-        </div>
-    );
+  return (
+    <div className="text-center justify-around justify-items-center ">
+      <Link to={`/products/${_id}`}>
+        <img className="rounded shadow" alt={name} src={`/images/${image}`} />
+        <p className="m-5">{name}</p>
+      </Link>
+      <button
+        className="bg-green-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+        onClick={addDownload}
+      >
+        Add Download
+      </button>
+    </div>
+  );
 }
 
 export default ProductItem;
