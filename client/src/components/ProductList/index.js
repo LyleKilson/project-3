@@ -58,7 +58,7 @@ console.log(currentCategory);
                         ))}
                     </div>
                 ) : (
-                    <h3>Be Social With Us!</h3>
+                    <h3></h3>
                 )}
                 
             </div>
