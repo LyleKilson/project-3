@@ -26,7 +26,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div>
+        <body className="bg-gray-50">
           <StoreProvider>
             <Nav />
             <Switch>
@@ -36,7 +36,7 @@ function App() {
               <Route component={NoMatch} />
             </Switch>
           </StoreProvider>
-        </div>
+        </body>
       </Router>
     </ApolloProvider>
   );
